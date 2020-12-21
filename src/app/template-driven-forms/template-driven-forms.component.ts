@@ -13,4 +13,8 @@ export class TemplateDrivenFormsComponent implements OnInit {
   log(val) {
     console.log(val.value);
   }
+
+  submit(f) {
+    console.log(f.value);
+  }
 }
