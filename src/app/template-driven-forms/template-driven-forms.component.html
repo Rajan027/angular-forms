@@ -18,7 +18,7 @@
 			<div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
 				<div *ngIf="firstName.errors.required">First Name is required</div>
 				<div *ngIf="firstName.errors.minlength">
-					First Name should be minimum 3 characters
+					First Name should be minimum {{firstName.errors.minlength.requiredLength}} characters
 				</div>
 				<div *ngIf="firstName.errors.pattern">
 					First Name doesn't match pattern
