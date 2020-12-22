@@ -28,11 +28,11 @@ export class ReactiveFormsComponent implements OnInit {
   ngOnInit() {}
 
   get username() {
-    return this.form.get("username");
+    return this.form.get("account.username");
   }
 
   get password() {
-    return this.form.get("password");
+    return this.form.get("account.password");
   }
 
   login() {
