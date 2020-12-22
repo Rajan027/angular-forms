@@ -9,11 +9,15 @@ import { UsernameValidators } from "./username.validators";
 })
 export class ReactiveFormsComponent implements OnInit {
   form = new FormGroup({
-    username: new FormControl("", [
-      Validators.required,
-      Validators.minLength(3),
-      UsernameValidators.cannotContainSapce
-    ]),
+    username: new FormControl(
+      "",
+      [
+        Validators.required,
+        Validators.minLength(3),
+        UsernameValidators.cannotContainSapce
+      ],
+      UsernameValidators.shouldBeUnique
+    ),
     password: new FormControl("", Validators.required)
   });
 
