@@ -9,16 +9,18 @@ import { UsernameValidators } from "./username.validators";
 })
 export class ReactiveFormsComponent implements OnInit {
   form = new FormGroup({
-    username: new FormControl(
-      "",
-      [
-        Validators.required,
-        Validators.minLength(3),
-        UsernameValidators.cannotContainSapce
-      ],
-      UsernameValidators.shouldBeUnique
-    ),
-    password: new FormControl("", Validators.required)
+    account: new FormGroup({
+      username: new FormControl(
+        "",
+        [
+          Validators.required,
+          Validators.minLength(3),
+          UsernameValidators.cannotContainSapce
+        ],
+        UsernameValidators.shouldBeUnique
+      ),
+      password: new FormControl("", Validators.required)
+    })
   });
 
   constructor() {}
@@ -34,6 +36,7 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   login() {
+    // checking errors at form level
     this.form.setErrors({ invalidLogin: true });
   }
 }
