@@ -4,6 +4,7 @@
 		<div class="form-group">
 			<label for="userName">Username</label>
 			<input formControlName="username" type="text" id="userName" class="form-control">
+			<div *ngIf="username.pending">Checking for uniqueness</div>
 			<div *ngIf="username.touched && username.invalid" class="alert alert-danger">
 				<div *ngIf="username.errors.required">Username is required</div>
 				<div *ngIf="username.errors.minlength">username should be minimum

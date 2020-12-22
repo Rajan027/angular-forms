@@ -11,6 +11,7 @@ export class UsernameValidators {
   static shouldBeUnique(
     control: AbstractControl
   ): Promise<ValidationErrors> | null {
+    //simulate the server call
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (control.value === "John") {
