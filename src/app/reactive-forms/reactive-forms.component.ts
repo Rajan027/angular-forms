@@ -45,12 +45,16 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   addTopic(topic: HTMLInputElement) {
-    (this.topicsForm.get("topics") as FormArray).push(
-      new FormControl(topic.value)
-    );
+    this.topicsArray.push(new FormControl(topic.value));
+    topic.value = "";
   }
 
   get topicsArray() {
-    return (this.topicsForm.get("topics") as FormArray).controls;
+    return this.topicsForm.get("topics") as FormArray;
+  }
+
+  removeTopic(topic: FormControl) {
+    let index = this.topicsArray.controls.indexOf(topic);
+    this.topicsArray.removeAt(index);
   }
 }
