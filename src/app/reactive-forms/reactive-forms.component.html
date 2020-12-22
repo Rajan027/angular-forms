@@ -26,7 +26,7 @@
 </div>
 
 <div class="mb-5">
-	<form>
+	<form [formGroup]="topicsForm">
 		<label for="topics">Add New Topic</label>
 		<input id="topics" type="text" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
 		<ul class="list-group">
