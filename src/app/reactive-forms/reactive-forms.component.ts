@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { UsernameValidators } from "./username.validators";
 
 @Component({
   selector: "app-reactive-forms",
@@ -10,7 +11,8 @@ export class ReactiveFormsComponent implements OnInit {
   form = new FormGroup({
     username: new FormControl("", [
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(3),
+      UsernameValidators.cannotContainSapce
     ]),
     password: new FormControl("", Validators.required)
   });
