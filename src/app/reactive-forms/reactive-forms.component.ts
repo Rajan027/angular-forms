@@ -52,8 +52,4 @@ export class ReactiveFormsComponent implements OnInit {
   get topicsArray() {
     return (this.topicsForm.get("topics") as FormArray).controls;
   }
-
-  removeTopic(topic: FormControl) {
-    let index = this.topicsArray.indexOf(topic);
-  }
 }
