@@ -24,3 +24,13 @@
 		<button type="submit" class="btn btn-primary">Sign In</button>
 	</form>
 </div>
+
+<div class="mb-5">
+	<form>
+		<label for="topics">Add New Topic</label>
+		<input id="topics" type="text" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
+		<ul class="list-group">
+			<li *ngFor="let topic of topicsForm.get('topics')" class="list-group-item">{{topic.value}}</li>
+		</ul>
+	</form>
+</div>

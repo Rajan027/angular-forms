@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormArray } from "@angular/forms";
 import { UsernameValidators } from "./username.validators";
 
 @Component({
@@ -23,6 +23,10 @@ export class ReactiveFormsComponent implements OnInit {
     })
   });
 
+  topicsForm = new FormGroup({
+    topics: new FormArray([])
+  });
+
   constructor() {}
 
   ngOnInit() {}
@@ -38,5 +42,11 @@ export class ReactiveFormsComponent implements OnInit {
   login() {
     // checking errors at form level
     this.form.setErrors({ invalidLogin: true });
+  }
+
+  addTopic(topic: HTMLInputElement) {
+    (this.topicsForm.get("topics") as FormArray).push(
+      new FormControl(topic.value)
+    );
   }
 }
