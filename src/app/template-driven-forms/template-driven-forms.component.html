@@ -42,8 +42,14 @@
 		<div class="form-group">
 			<label for="contactMethod"></label>
 			<select ngModel name="contactMethod" id="contactMethod" class="form-control">
+        <option value=""></option>
         <option [value]="method.id" *ngFor="let method of contactMethods">{{method.name}}</option>
       </select>
+		</div>
+		<div *ngFor="let method of contactMethods" type="radio">
+			<label>
+        <input ngModel type="radio" name="contactMethod" [value]="method.id"> {{method.name}}
+      </label>
 		</div>
 		<div class="checkbox">
 			<label>

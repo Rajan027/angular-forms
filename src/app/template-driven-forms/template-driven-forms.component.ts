@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./template-driven-forms.component.css"]
 })
 export class TemplateDrivenFormsComponent implements OnInit {
-  contactMethods = [{ id: 1, nsme: "Email" }, { id: 2, name: "Phone" }];
+  contactMethods = [{ id: 1, name: "Email" }, { id: 2, name: "Phone" }];
 
   constructor() {}
 
