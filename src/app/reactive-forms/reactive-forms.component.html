@@ -1,6 +1,7 @@
 <h3>Reactive Forms</h3>
 <div class="mb-5">
-	<form [formGroup]="form">
+	<form [formGroup]="form" (ngSubmit)="login()">
+		<div *ngIf="form.errors" class="alert alert-danger">The username or password is invalid</div>
 		<div class="form-group">
 			<label for="userName">Username</label>
 			<input formControlName="username" type="text" id="userName" class="form-control">
@@ -18,6 +19,6 @@
 			<input formControlName="password" type="text" id="password" class="form-control">
 			<div *ngIf="password.touched && password.invalid" class="alert alert-danger">Password is required</div>
 		</div>
-		<button type="submit" class="btn btn-primary">Sign Up</button>
+		<button type="submit" class="btn btn-primary">Sign In</button>
 	</form>
 </div>

@@ -32,4 +32,8 @@ export class ReactiveFormsComponent implements OnInit {
   get password() {
     return this.form.get("password");
   }
+
+  login() {
+    this.form.setErrors({ invalidLogin: true });
+  }
 }
