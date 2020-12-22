@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators, FormArray } from "@angular/forms";
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormArray,
+  FormBuilder
+} from "@angular/forms";
 import { UsernameValidators } from "./username.validators";
 
 @Component({
@@ -27,7 +33,13 @@ export class ReactiveFormsComponent implements OnInit {
     topics: new FormArray([])
   });
 
-  constructor() {}
+  constructor(fb: FormBuilder) {
+    //below code we can use if we will use form builder
+    // this.form = fb.group({
+    //   username: ["", Validators.required],
+    //   password: ["", Validators.required]
+    // });
+  }
 
   ngOnInit() {}
 
