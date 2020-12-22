@@ -49,4 +49,8 @@ export class ReactiveFormsComponent implements OnInit {
       new FormControl(topic.value)
     );
   }
+
+  get topicsArray() {
+    return (this.topicsForm.get("topics") as FormArray).controls;
+  }
 }
