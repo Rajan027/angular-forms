@@ -9,8 +9,8 @@
 		<div class="form-group">
 			<label for="password">Password</label>
 			<input formControlName="password" type="text" id="password" class="form-control">
-      <div *ngIf="password.touched && password.invalid">Password is required</div>
-  </div>
-			<button type="submit" class="btn btn-primary">Sign Up</button>
+			<div *ngIf="password.touched && password.invalid">Password is required</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Sign Up</button>
 	</form>
 </div>
